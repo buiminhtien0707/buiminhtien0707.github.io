@@ -198,6 +198,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Scroll Progress Indicator
+function createScrollProgressIndicator() {
+    const progressBar = document.createElement('div');
+    progressBar.id = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+}
+
+// Scroll-based Section Visibility and Animations
+class ScrollAnimations {
+    constructor() {
+        this.sections = document.querySelectorAll('.section');
+        this.setupScrollObserver();
+    }
+
+    setupScrollObserver() {
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: stop observing after making visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        // Observe each section
+        this.sections.forEach(section => {
+            observer.observe(section);
+        });
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Create canvas for particle background
@@ -210,4 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new SkillInteraction();
     new QuoteGenerator();
     addConsoleEasterEgg();
+    createScrollProgressIndicator();
+    new ScrollAnimations();
 });
