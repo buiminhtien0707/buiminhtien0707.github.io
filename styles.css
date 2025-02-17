@@ -1,3 +1,4 @@
+
 /* Enhanced Color Palette */
 :root {
     /* Primary Colors */
@@ -35,6 +36,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust based on your navbar height */
 }
 
 body {
@@ -49,6 +51,7 @@ body {
     position: relative;
     min-height: 100vh;
     transition: background 0.5s ease;
+    overflow-x: hidden;
 }
 
 body::before {
@@ -267,8 +270,16 @@ h3 {
 }
 
 /* Sections */
-section {
+.section {
     padding: 5rem 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Education Section */
@@ -886,4 +897,28 @@ body.dark-mode .dark-mode-toggle:hover {
 
 .random-quote {
     display: none;
+}
+
+/* Scroll-based animations */
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Smooth scroll progress indicator */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background: linear-gradient(
+        45deg, 
+        var(--primary-color), 
+        var(--secondary-color)
+    );
+    z-index: 1000;
+    transition: width 0.2s ease;
 }
