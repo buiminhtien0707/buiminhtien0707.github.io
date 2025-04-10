@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="scroll-animation.js" defer></script>
+    <style>
+        .project-images {
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+            height: 140px; /* Giảm chiều cao để hiển thị đúng phần chữ TIME MANAGEMENT */
+        }
+        .project-images img {
+            width: 100%; /* Sử dụng 100% chiều rộng */
+            height: 100%; /* Sử dụng 100% chiều cao */
+            object-fit: contain; /* Thay đổi từ cover sang contain để hiển thị đầy đủ nội dung */
+            transition: transform 0.3s ease;
+            background-color: #f5f5f5; /* Thêm màu nền nhẹ */
+        }
+        .project-images img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="index.html">My Portfolio</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Welcome to my projects</h2>
+            <p class="projects-intro">These are the projects that I have carried out so far. Let's click on the "Read more" button to figure out my mysteries under each project.</p>
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-images">
+                        <img src="time-1126254_640_pixa.webp" alt="Project 1 Image">
+                    </div>
+                    <div class="project-info">
+                        <h3>Time management and Task assignment</h3>
+                        <p>A website project that I put a lot of effort into creating. It demands all the techniques I've ever studied</p>
+                        <a href="project1.html" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-images">
+                        <img src="Android_logo_2023_(stacked).svg.png" alt="Project 2 Image">
+                    </div>
+                    <div class="project-info">
+                        <h3>Android app</h3>
+                        <p>This is the first project I worked on when I started learning about apps; it includes a lot of basic knowledge.</p>
+                        <a href="project2.html" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Information</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:buiminhtien070707@gmail.com">buiminhtien070707@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+84378988507">+84 378988507</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Hanoi, Vietnam</p>
+                </div>
+            </div>
+            <div class="social-links">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p> Bui Minh Tien's Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
