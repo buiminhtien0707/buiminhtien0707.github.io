@@ -435,37 +435,46 @@ h3 {
 }
 
 .achievement-cards {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .achievement-card {
     background: white;
-    border-left: 5px solid var(--primary-color);
+    border-radius: 12px;
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: none;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
     animation: fadeUp 0.5s ease forwards;
 }
 
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+}
+
 .achievement-card:hover {
-    border-left-color: var(--accent-color);
+    transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(253, 121, 168, 0.2);
-    transform: scale(1.05);
-    transition: all 0.3s ease;
 }
 
 .achievement-card h3 {
     font-family: var(--heading-font);
     color: var(--primary-color);
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-align: center;
     letter-spacing: -0.5px;
 }
@@ -489,6 +498,47 @@ h3 {
     position: absolute;
     left: 0;
     font-weight: bold;
+}
+
+.achievement-details {
+    padding: 0.5rem 0;
+}
+
+.achievement-details p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.award {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.award:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.award-name {
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.award-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .achievement-cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Activities & Leadership Section */
