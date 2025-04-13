@@ -14,17 +14,25 @@
         .project-images {
             overflow: hidden;
             border-radius: 8px 8px 0 0;
-            height: 140px; /* Giảm chiều cao để hiển thị đúng phần chữ TIME MANAGEMENT */
+            height: 200px; /* Increased height for better image display */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .project-images img {
-            width: 100%; /* Sử dụng 100% chiều rộng */
-            height: 100%; /* Sử dụng 100% chiều cao */
-            object-fit: contain; /* Thay đổi từ cover sang contain để hiển thị đầy đủ nội dung */
+            width: 100%; /* Full width */
+            height: auto; /* Auto height to maintain aspect ratio */
+            max-height: 100%; /* Ensure it doesn't exceed container */
+            object-fit: contain; /* Show the entire image */
             transition: transform 0.3s ease;
-            background-color: #f5f5f5; /* Thêm màu nền nhẹ */
+            background-color: #f5f5f5; /* Light background */
         }
         .project-images img:hover {
             transform: scale(1.05);
+        }
+        .colored-logo {
+            color: white;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -32,10 +40,10 @@
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
-                <a href="index.html">My Portfolio</a>
+                <span class="colored-logo">My Portfolio</span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Resume</a></li>
+                <li><a href="index.html#home">Resume</a></li>
                 <li><a href="projects.html">Projects</a></li>
             </ul>
         </div>
@@ -43,8 +51,8 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2>Welcome to my projects</h2>
-            <p class="projects-intro">These are the projects that I have carried out so far. Let's click on the "Read more" button to figure out my mysteries under each project.</p>
+            <h2>My Projects</h2>
+            <p class="projects-intro">Explore my portfolio of personal projects that showcase my technical skills and passion for software development. Each project represents a unique challenge and learning opportunity in my journey as an aspiring software engineer.</p>
             
             <div class="project-cards">
                 <div class="project-card">
@@ -52,8 +60,9 @@
                         <img src="image/time-1126254_640_pixa.webp" alt="Project 1 Image">
                     </div>
                     <div class="project-info">
-                        <h3>Time management and Task assignment</h3>
-                        <p>A website project that I put a lot of effort into creating. It demands all the techniques I've ever studied</p>
+                        <h3>Time Management and Task Assignment (Web App)</h3>
+                        <p class="project-type"><strong>Project Type:</strong> Personal Project</p>
+                        <p>A personal full-stack web project built to improve time management and task organization. Developed using React, Node.js, and PostgreSQL, this platform helps users create, assign, and track tasks effectively while enhancing my frontend, backend, and database integration skills.</p>
                         <a href="project1.html" class="read-more-btn">Read More</a>
                     </div>
                 </div>
@@ -63,8 +72,9 @@
                         <img src="image/Android_logo_2023_(stacked).svg.png" alt="Project 2 Image">
                     </div>
                     <div class="project-info">
-                        <h3>Android app</h3>
-                        <p>This is the first project I worked on when I started learning about apps; it includes a lot of basic knowledge.</p>
+                        <h3>Android App (First Mobile Application)</h3>
+                        <p class="project-type"><strong>Project Type:</strong> Personal Project</p>
+                        <p>A personal project exploring mobile app fundamentals. Developed a basic Android application with Java and Android Studio to understand mobile UI/UX design, user authentication, and app structure concepts.</p>
                         <a href="project2.html" class="read-more-btn">Read More</a>
                     </div>
                 </div>
