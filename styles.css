@@ -144,14 +144,13 @@ h3 {
     align-items: center;
 }
 
-.logo a {
+.logo a, .logo-text {
     font-family: var(--heading-font);
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
     text-decoration: none;
     letter-spacing: 0.5px;
-    transition: all 0.3s ease;
     position: relative;
     padding: 0.25rem 0.5rem;
     border-radius: 8px;
@@ -532,6 +531,109 @@ h3 {
     font-size: 0.9rem;
     color: var(--text-secondary);
     margin-top: 0.25rem;
+}
+
+/* Experience Section */
+.experience {
+    background-color: white;
+    padding: 6rem 2rem;
+}
+
+.experience .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experience-content {
+    margin-top: 2rem;
+}
+
+.experience-item {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--primary-color);
+}
+
+.experience-item h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item .company {
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.experience-item .location {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.experience-item .description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.experience-details {
+    list-style: none;
+    padding-left: 0;
+}
+
+.experience-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.experience-details li:before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* About Me Section */
+.about {
+    background: linear-gradient(
+        to right, 
+        color-mix(in srgb, var(--primary-color) 10%, white),
+        color-mix(in srgb, var(--secondary-color) 10%, white)
+    );
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.about .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* Media query for smaller screens */
@@ -1186,6 +1288,197 @@ body.dark-mode .dark-mode-toggle {
 body.dark-mode .dark-mode-toggle:hover {
     background-color: #fff;
     color: #000;
+}
+
+/* Project Styles */
+.project-type {
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}
+
+.projects {
+    padding: 6rem 2rem;
+    background: linear-gradient(to right, rgba(245, 245, 250, 0.8), rgba(245, 245, 250, 0.9));
+}
+
+.projects .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.read-more-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.read-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Project Detail Page Styles */
+.project-detail {
+    padding: 6rem 2rem 3rem;
+    background: linear-gradient(to right, rgba(245, 245, 250, 0.8), rgba(245, 245, 250, 0.9));
+}
+
+.project-detail-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project-header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.section h2 {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.section h2::after {
+    display: none;
+}
+
+.section .icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.content-block {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.content-block p {
+    margin-bottom: 1rem;
+}
+
+.content-block ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.content-block ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.content-block ul li:before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.challenge {
+    background: rgba(106, 90, 205, 0.05);
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 5px 5px 0;
+}
+
+.challenge p {
+    margin-bottom: 0.5rem;
+}
+
+.challenge p:last-child {
+    margin-bottom: 0;
+}
+
+.back-to-projects {
+    display: inline-block;
+    margin-top: 2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-projects:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .timeline-item::before {
