@@ -10,15 +10,200 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="scroll-animation.js" defer></script>
+    <style>
+        /* Project Detail Styling */
+        .project-detail {
+            padding: 5rem 1.5rem 2rem;
+            background: linear-gradient(to right, rgba(245, 245, 250, 0.8), rgba(245, 245, 250, 0.9));
+        }
+        
+        .project-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+        
+        .project-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-type {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+        
+        /* Storyboarding Section Styling */
+        .storyboarding-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+            background-color: #f9f9ff;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        .storyboarding-section:last-child {
+            border-bottom: none;
+        }
+        
+        .text-content {
+            flex: 1.5;
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+        
+        .image-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.75rem;
+        }
+        
+        .image-content img {
+            width: 80%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-content img:hover {
+            transform: scale(1.03);
+        }
+        
+        .storyboarding-section h2 {
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .storyboarding-section h2::after {
+            display: none;
+        }
+        
+        .storyboarding-section .icon {
+            margin-right: 10px;
+        }
+        
+        .storyboarding-section p {
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .storyboarding-section blockquote {
+            background: rgba(106, 90, 205, 0.05);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+        
+        .storyboarding-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .storyboarding-section ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+        
+        .storyboarding-section ul li:before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .challenge {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #eee;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .challenge p {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .challenge p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .back-to-projects {
+            display: inline-block;
+            margin-top: 2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-to-projects:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Logo Styling */
+        .colored-logo {
+            color: white;
+            font-weight: 700;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .storyboarding-section {
+                flex-direction: column;
+            }
+            
+            .text-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
-                <a href="index.html">My Portfolio</a>
+                <span class="colored-logo">My Portfolio</span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Resume</a></li>
+                <li><a href="index.html#home">Resume</a></li>
                 <li><a href="projects.html">Projects</a></li>
             </ul>
         </div>
@@ -27,17 +212,17 @@
     <section class="project-detail">
         <div class="project-detail-container">
             <div class="project-header">
-                <h1>ANDROID APP</h1>
-                <p>This is the first project I worked on when I started learning about apps; it includes a lot of basic knowledge.</p>
+                <h1>Android App (First Mobile Application)</h1>
+                <p class="project-type"><strong>Project Type:</strong> Personal Project</p>
             </div>
 
             <div class="project-description">
                 <div class="storyboarding-section">
                     <div class="text-content">
-                        <h2>Target users and key features</h2>
-                        <p>
-                            This app is designed for people who have difficulty communicating in society. It has some very unique features. There is an admin section where tasks and encouraging messages can be added for each mood. Below the admin section is the user section, where users need to input their mood and click on it. Once clicked, an encouraging message will appear at the top, and a task will show up in the middle. The user can complete the task, or if it seems too difficult, they can skip it.
-                        </p>
+                        <h2><span class="icon">🎯</span> Objective</h2>
+                        <blockquote>
+                            Build a mobile prototype that links emotional states to dynamic task assignment, laying the groundwork for future gamified communication platforms.
+                        </blockquote>
                     </div>
                     <div class="image-content">
                         <img src="image/image project 2-1.png" alt="Project Image 2-1">
@@ -46,12 +231,15 @@
                 
                 <div class="storyboarding-section">
                     <div class="text-content">
-                        <h2>Technologies Used</h2>
-                        <p>
-                            The technologies I used are:<br>
-                            - Android Studio<br>
-                            I chose this technology because it allows me to create apps for Android devices and it is very easy to use.
-                        </p>
+                        <h2><span class="icon">🧠</span> Software Architecture and Logic</h2>
+                        <blockquote>
+                            The application follows a simplified MVC structure, separating UI layouts (XML), user input handling (Activities), and local data management (Java Objects).
+                        </blockquote>
+                        <ul>
+                            <li>Activities control the application logic and navigation flow.</li>
+                            <li>Moods and tasks are structured into objects stored in memory.</li>
+                            <li>User interactions trigger event handlers updating views dynamically.</li>
+                        </ul>
                     </div>
                     <div class="image-content">
                         <img src="image/image project 2-2.png" alt="Project Image 2-2">
@@ -60,10 +248,11 @@
                 
                 <div class="storyboarding-section">
                     <div class="text-content">
-                        <h2>Languages</h2>
-                        <p>
-                            The languages I have used are: Java, XML.
-                        </p>
+                        <h2><span class="icon">🛠️</span> Technologies Used</h2>
+                        <ul>
+                            <li><strong>Development Environment:</strong> Android Studio</li>
+                            <li><strong>Languages:</strong> Java, XML</li>
+                        </ul>
                     </div>
                     <div class="image-content">
                         <img src="image/image project 2-3.png" alt="Project Image 2-3">
@@ -71,20 +260,61 @@
                 </div>
                 
                 <div class="storyboarding-section">
+                    <div class="text-content">
+                        <h2><span class="icon">✨</span> Key Features</h2>
+                        <ul>
+                            <li>Admin mode: Create, edit, and delete mood-related motivational messages and tasks.</li>
+                            <li>User mode: Select mood, receive corresponding encouragement and task assignment.</li>
+                            <li>Internal data structure to simulate lightweight database functionality.</li>
+                            <li>Dynamic rendering of mood-task mapping without external backend.</li>
+                        </ul>
+                    </div>
                     <div class="image-content">
                         <img src="image/image project 2-4.png" alt="Project Image 2-4">
                     </div>
                 </div>
                 
                 <div class="storyboarding-section">
+                    <div class="text-content">
+                        <h2><span class="icon">🧩</span> Skills Developed</h2>
+                        <ul>
+                            <li>Event-driven programming and mobile app lifecycle management.</li>
+                            <li>Designing multi-activity Android apps with clear user interaction flow.</li>
+                            <li>Dynamic UI rendering based on user input.</li>
+                            <li>Managing in-memory data structures for quick retrieval and manipulation.</li>
+                        </ul>
+                    </div>
                     <div class="image-content">
                         <img src="image/image project 2-5.png" alt="Project Image 2-5">
                     </div>
                 </div>
                 
                 <div class="storyboarding-section">
+                    <div class="text-content">
+                        <h2><span class="icon">🚀</span> Challenges & How I Overcame Them</h2>
+                        <div class="challenge">
+                            <p><strong>Challenge:</strong> Managing dual-mode (Admin/User) app logic flow.</p>
+                            <p><strong>Solution:</strong> Designed modular Activities and used Intent extras to separate functionality cleanly.</p>
+                        </div>
+                        <div class="challenge">
+                            <p><strong>Challenge:</strong> Structuring dynamic data without database support.</p>
+                            <p><strong>Solution:</strong> Implemented internal Java collections (HashMaps) to map moods to tasks efficiently.</p>
+                        </div>
+                    </div>
                     <div class="image-content">
                         <img src="image/image project 2-6.png" alt="Project Image 2-6">
+                    </div>
+                </div>
+                
+                <div class="storyboarding-section">
+                    <div class="text-content">
+                        <h2><span class="icon">🪞</span> Reflection & Next Steps</h2>
+                        <blockquote>
+                            This project provided a strong foundation in mobile application architecture and dynamic event handling. It directly inspired the development of more complex communication support apps like ReLink, focusing on helping introverted students improve social interaction skills through gamified daily activities.
+                        </blockquote>
+                    </div>
+                    <div class="image-content">
+                        <img src="image/image project 2-7.png" alt="Project Image 2-7" onerror="this.src='image/image project 2-6.png'">
                     </div>
                 </div>
                 
